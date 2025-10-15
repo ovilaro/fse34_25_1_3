@@ -1,22 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:fse34_25_1_3/models/activity.dart';
 import 'package:fse34_25_1_3/styles/app_styles.dart';
 
 class ActivityCard extends StatelessWidget {
-  const ActivityCard({
-    super.key,
-    required this.activityType,
-    required this.dateTime,
-    required this.distance,
-  });
+  const ActivityCard({super.key, required this.activity});
 
-  final String activityType, dateTime, distance;
+  final Activity activity;
 
   @override
   Widget build(BuildContext context) {
     return Card(
       child: InkWell(
-        onTap: () =>
-            debugPrint("card pressed: $activityType $dateTime $distance"),
+        onTap: () => debugPrint(
+          "card pressed: ${activity.activityType} ${activity.dateTime} ${activity.distance}",
+        ),
         child: SizedBox(
           width: null,
           height: 60,
@@ -37,14 +34,20 @@ class ActivityCard extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(activityType, style: AppStyles.activityTypeText),
-                          Text(dateTime, style: AppStyles.dateTimeText),
+                          Text(
+                            activity.activityType,
+                            style: AppStyles.activityTypeText,
+                          ),
+                          Text(
+                            activity.dateTime,
+                            style: AppStyles.dateTimeText,
+                          ),
                         ],
                       ),
                     ),
                   ],
                 ),
-                Text(distance, style: AppStyles.distanceText),
+                Text(activity.distance, style: AppStyles.distanceText),
               ],
             ),
           ),

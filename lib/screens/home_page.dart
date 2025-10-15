@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fse34_25_1_3/models/activity.dart';
 import 'package:fse34_25_1_3/styles/app_styles.dart';
 import 'package:fse34_25_1_3/widgets/activity_card.dart';
 import 'package:percent_indicator/flutter_percent_indicator.dart';
@@ -65,21 +66,8 @@ class HomePage extends StatelessWidget {
               padding: const EdgeInsets.only(left: 18, top: 6, right: 18),
               child: Column(
                 children: [
-                  ActivityCard(
-                    activityType: "Running",
-                    dateTime: "Ahir, 18:20",
-                    distance: "7,300 km",
-                  ),
-                  ActivityCard(
-                    activityType: "Running",
-                    dateTime: "15 Set 2024, 21:45",
-                    distance: "6,550 km",
-                  ),
-                  ActivityCard(
-                    activityType: "Running",
-                    dateTime: "10 Set 2024, 21:33",
-                    distance: "7,100 km",
-                  ),
+                  for (var activity in Activity.activities)
+                    ActivityCard(activity: activity),
                 ],
               ),
             ),
