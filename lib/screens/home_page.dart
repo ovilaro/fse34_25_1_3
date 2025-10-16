@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fse34_25_1_3/models/activity.dart';
+import 'package:fse34_25_1_3/screens/profile_page.dart';
 import 'package:fse34_25_1_3/styles/app_styles.dart';
 import 'package:fse34_25_1_3/widgets/activity_card.dart';
 import 'package:percent_indicator/flutter_percent_indicator.dart';
@@ -18,10 +19,19 @@ class HomePage extends StatelessWidget {
         ),
         actions: [
           IconButton(
-            onPressed: () => debugPrint("circle avatar tapped"),
-            icon: CircleAvatar(
-              foregroundImage: NetworkImage(
-                "https://randomuser.me/api/portraits/women/44.jpg",
+            onPressed: () {
+              debugPrint("circle avatar tapped");
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProfilePage()),
+              );
+            },
+            icon: Hero(
+              tag: "avatar",
+              child: CircleAvatar(
+                foregroundImage: NetworkImage(
+                  "https://randomuser.me/api/portraits/women/44.jpg",
+                ),
               ),
             ),
           ),
