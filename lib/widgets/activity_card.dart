@@ -11,9 +11,12 @@ class ActivityCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: InkWell(
-        onTap: () => debugPrint(
-          "card pressed: ${activity.activityType} ${activity.dateTime} ${activity.distance}",
-        ),
+        onTap: () {
+          // TODO: show activity detail
+          debugPrint(
+            "card pressed: ${activity.activityType} ${activity.dateTime} ${activity.distance}",
+          );
+        },
         child: SizedBox(
           width: null,
           height: 60,

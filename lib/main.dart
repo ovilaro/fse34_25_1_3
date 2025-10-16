@@ -12,15 +12,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        appBarTheme: AppBarTheme(
-          backgroundColor: AppStyles.pinkColor,
-          foregroundColor: AppStyles.whiteColor,
-          titleTextStyle: AppStyles.appBarTitle,
-          centerTitle: true,
-        ),
-        // bottomNavigationBarTheme: BottomNavigationBarThemeData(elevation: 30),
-      ),
+      theme: ThemeData(appBarTheme: AppStyles.appBarTheme),
       home: const HomePage(),
     );
   }

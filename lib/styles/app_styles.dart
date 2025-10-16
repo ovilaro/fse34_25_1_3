@@ -3,14 +3,20 @@ import 'package:google_fonts/google_fonts.dart';
 
 class AppStyles {
   // colors
-  static Color darkGreyColor = Colors.black45;
-  static Color pinkColor = Color(0xfff896d8);
-  static Color whiteColor = Colors.white;
-  static Color blueColor = Color(0xFF3407DA);
-  static Color purpleColor = Color(0xFFBF63F8);
+  static const darkGreyColor = Colors.black45;
+  static const Color pinkColor = Color(0xfff896d8);
+  static const Color whiteColor = Colors.white;
+  static const Color blueColor = Color(0xFF3407DA);
+  static const Color purpleColor = Color(0xFFBF63F8);
 
   // appBar title and colors
   static TextStyle appBarTitle = TextStyle(fontSize: 24, color: whiteColor);
+  static AppBarTheme appBarTheme = AppBarTheme(
+    backgroundColor: AppStyles.pinkColor,
+    foregroundColor: AppStyles.whiteColor,
+    titleTextStyle: AppStyles.appBarTitle,
+    centerTitle: true,
+  );
 
   // big title
   static TextStyle bigTitle = TextStyle(

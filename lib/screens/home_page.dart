@@ -14,17 +14,17 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Fitness Time"),
         leading: IconButton(
-          onPressed: () => debugPrint("drawer button tapped"),
+          onPressed: () {
+            // TODO: show drawer
+            debugPrint("drawer button tapped");
+          },
           icon: DrawerButtonIcon(),
         ),
         actions: [
           IconButton(
             onPressed: () {
               debugPrint("circle avatar tapped");
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => ProfilePage()),
-              );
+              goToProfile(context);
             },
             icon: Hero(
               tag: "avatar",
@@ -55,7 +55,10 @@ class HomePage extends StatelessWidget {
               ),
             ),
             GestureDetector(
-              onTap: () => debugPrint("more detail tapped"),
+              onTap: () {
+                debugPrint("more detail tapped");
+                goToProfile(context);
+              },
               child: Padding(
                 padding: const EdgeInsets.only(left: 18, top: 12, right: 18),
                 child: Row(
@@ -114,8 +117,28 @@ class HomePage extends StatelessWidget {
               label: "Botiga",
             ),
           ],
+          onTap: (value) {
+            switch (value) {
+              case 0:
+                // TODO: go to the home page
+                debugPrint("Home tapped");
+              case 1:
+                // TODO: go to the search page
+                debugPrint("Search tapped");
+              case 2:
+                // TODO: go to the shop page
+                debugPrint("Shop tapped");
+            }
+          },
         ),
       ),
+    );
+  }
+
+  void goToProfile(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => ProfilePage()),
     );
   }
 }
