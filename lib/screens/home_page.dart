@@ -11,15 +11,41 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(color: AppStyles.pinkColor),
+              child: Center(
+                child: CircleAvatar(
+                  radius: 100,
+                  foregroundImage: NetworkImage(
+                    "https://randomuser.me/api/portraits/women/44.jpg",
+                  ),
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text("Profile screen"),
+              trailing: Icon(Icons.chevron_right),
+              onTap: () {
+                Navigator.pop(context);
+                goToProfile(context);
+              },
+            ),
+          ],
+        ),
+      ),
       appBar: AppBar(
         title: const Text("Fitness Time"),
-        leading: IconButton(
-          onPressed: () {
-            // TODO: show drawer
-            debugPrint("drawer button tapped");
-          },
-          icon: DrawerButtonIcon(),
-        ),
+        // leading: IconButton(
+        //   onPressed: () {
+        //     debugPrint("drawer button tapped");
+        //   },
+        //   icon: DrawerButtonIcon(),
+        // ),
         actions: [
           IconButton(
             onPressed: () {
